@@ -1,12 +1,21 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Request, Response, Body, Req, Header, Headers, HttpCode, RawBodyRequest} from '@nestjs/common';
 import { AppService } from './app.service';
 
-@Controller()
+@Controller("api")
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Post("justify")
+  justify(@Headers("Content-Type") type: string, @Req() req: RawBodyRequest<Request>): string {
+
+    if (type != "text/plain")
+      return "error"    
+    const raw = req.rawBody.toString();
+    return raw;
+  }
+
+  @Post("token")
+  getToken(): string {
+    return this.appService.getToken();
   }
 }
