@@ -6,6 +6,6 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {rawBody: true});
   app.useBodyParser('text')
   console.log('Application is running on : ' + app.getUrl());
-  await app.listen(process.env.PORT || 3000);
+  await app.listen(80);
 }
 bootstrap();
