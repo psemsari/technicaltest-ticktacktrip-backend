@@ -1,10 +1,13 @@
-import { Controller, Get, Post, Request, Response, Body, Req, Header, Headers, HttpCode, RawBodyRequest} from '@nestjs/common';
+import { Controller, UseGuards, Post, Request, Response, Body, Req, Header, Headers, HttpCode, RawBodyRequest} from '@nestjs/common';
 import { AppService } from './app.service';
+
+import { AuthGuard } from './auth/auth.guard';
 
 @Controller("api")
 export class AppController {
   constructor(private readonly appService: AppService) {}
-
+  
+  @UseGuards(AuthGuard)
   @Post("justify")
   @Header("Content-Type", 'text/plain')
   @HttpCode(200)
@@ -18,10 +21,5 @@ export class AppController {
     const text = req.rawBody.toString();
     const justify_text = this.appService.justify(text);
     return justify_text;
-  }
-
-  @Post("token")
-  getToken(): string {
-    return this.appService.getToken();
   }
 }
