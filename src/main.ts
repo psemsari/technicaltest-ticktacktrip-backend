@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {rawBody: true});
   app.useBodyParser('text')
+  console.log('Application is running on ' + app.getUrl());
   await app.listen(port);
-  console.log('Application is running on');
 }
 bootstrap();
