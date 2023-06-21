@@ -1,10 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { AppController } from './app.controller';
 import { readFileSync } from 'fs';
 
-describe('AppController', () => {
-  let appController: AppController;
+describe('AppService', () => {
+  let appservice: AppService;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
@@ -12,13 +12,15 @@ describe('AppController', () => {
       providers: [AppService],
     }).compile();
 
-    appController = app.get<AppController>(AppController);
+    appservice = app.get<AppService>(AppService);
   });
 
   describe('root', () => {
     it('should return the text', () => {
-      expect()
-      .toBe();
+      const filein = readFileSync('../input.txt', 'utf-8')
+      const fileout = readFileSync('../output.txt', 'utf-8')
+      expect(appservice.justify(filein.toString()))
+      .toBe(fileout.toString());
     });
   });
 });
