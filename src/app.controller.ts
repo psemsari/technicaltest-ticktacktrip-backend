@@ -39,7 +39,7 @@ export class AppController {
   @ApiProduces('text/plain')
   @ApiConsumes('text/plain')
   @ApiBody({type: String,
-  examples: {"test text": {value: "text to justify"}}})
+  examples: {"test text": {value: "text to justify"}}}) 
   @ApiOkResponse({description: "return justify the content", type: String})
   @ApiMethodNotAllowedResponse({description: "need content-type to text/plain"})
   @ApiUnauthorizedResponse({description: "need a bearer token from /api/token"})
