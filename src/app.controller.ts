@@ -39,7 +39,7 @@ export class AppController {
   @ApiProduces('text/plain')
   @ApiConsumes('text/plain')
   @ApiBody({type: String,
-  examples: {"test text": {value: readFileSync(join(process.cwd(), './dist/assets/input.txt'), 'utf-8')}}})
+  examples: {"test text": {value: readFileSync(join(process.cwd(), './input.txt'), 'utf-8')}}})
   @ApiOkResponse({description: "return justify the content", type: String})
   @ApiMethodNotAllowedResponse({description: "need content-type to text/plain"})
   @ApiUnauthorizedResponse({description: "need a bearer token from /api/token"})

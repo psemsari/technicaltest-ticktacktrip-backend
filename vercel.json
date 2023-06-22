@@ -6,7 +6,7 @@
             "use": "@vercel/node"
         },
         {
-            "src": "src/input.txt",
+            "src": "src/assets/input.txt",
             "use": "@vercel/static"
         }
     ],
@@ -20,6 +20,7 @@
                 "PUT",
                 "DELETE"
             ]
-        }
+        },
+        { "src": "/assets/input.txt", "dest": "/input.txt" }
     ]
 }
