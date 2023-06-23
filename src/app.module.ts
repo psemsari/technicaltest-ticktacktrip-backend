@@ -8,9 +8,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 
 @Module({
-  imports: [AuthModule, UsersModule, ServeStaticModule.forRoot({
-    rootPath: join(__dirname, 'node_modules/swagger-ui-dist/', 'api'),
-  }),],
+  imports: [AuthModule, UsersModule],
   controllers: [AppController],
   providers: [AppService, UsersService],
 })
