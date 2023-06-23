@@ -4,10 +4,6 @@
         {
             "src": "src/main.ts",
             "use": "@vercel/node"
-        },
-        {
-            "src": "src/assets/input.txt",
-            "use": "@vercel/static"
         }
     ],
     "routes": [
@@ -20,7 +16,6 @@
                 "PUT",
                 "DELETE"
             ]
-        },
-        { "src": "/assets/input.txt", "dest": "/input.txt" }
+        }
     ]
 }
