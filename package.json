@@ -26,6 +26,7 @@
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/serve-static": "^4.0.0",
     "@nestjs/swagger": "^7.0.4",
+    "fastify-swagger": "^5.2.0",
     "rate-limiter-flexible": "^2.4.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
