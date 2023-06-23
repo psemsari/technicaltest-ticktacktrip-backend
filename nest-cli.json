@@ -5,7 +5,7 @@
   "compilerOptions": {
     "deleteOutDir": true,
     "assets": [
-      "assets/*"
+      {"include": "../node_modules/swagger-ui-dist/*", "outDir": "dist/api"}
     ],
     "watchAssets": true
   }
